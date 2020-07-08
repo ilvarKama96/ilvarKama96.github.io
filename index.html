@@ -13,6 +13,7 @@
 <body>
 <div class="wrapper">
     <div class="head"></div>
+    <div class="head2"></div>
    <div class="button"></div>
     <div class="arrow">
         <img src="./finger.png" alt="">
@@ -23,10 +24,11 @@
 <script src="./js/bootstrap.js"></script>
 <script>
 
-    const button =  $('.button');
-    const head   =  $('.head');
+    const button   =  $('.button');
+    const head     =  $('.head');
+    const head2    =  $('.head2');
     const finger   =  $('.arrow');
-    let once = true;
+    let once       = true;
 
 
     button.on('click', function () {
@@ -37,7 +39,12 @@
         } else {
             head.addClass('animation')
         }
-
+    })
+    head.on('click', function () {
+        head2.addClass('active');
+        setTimeout(function () {
+            head2.removeClass('active');
+        }, 500)
     })
 </script>
 </html>
